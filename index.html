@@ -20,7 +20,7 @@
         var imageElement = document.getElementById('image');
         var btnNo = document.getElementById('btnNo');
         var btnYes = document.getElementById('btnYes');
-        var btnOtraPagina = document.getElementById('btnOtraPagina'); // Nuevo botón
+        
 
         var index = 0;
         var textP = 'Vamos, respondeme!';
@@ -39,6 +39,7 @@
             textP = 'Gracias por aceptar, te amo mucho <3';
             // Aquí iría la lógica para activar la animación de confeti, pero como este código está simplificado, no se incluye.
             updateUI();
+            var btnOtraPagina = document.getElementById('btnOtraPagina'); // Nuevo botón
         }
 
         function updateUI() {
