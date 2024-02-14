@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Mini Álbum</title>
+    <style>
+        #album {
+            position: relative;
+            display: inline-block;
+        }
+
+        #imagen {
+            max-width: calc(100% - 20px); /* El ancho de la imagen se ajusta al 100% del contenedor menos 20px de margen para la nota */
+            display: block;
+        }
+
+        #nota {
+            position: absolute;
+            bottom: 10px; /* Ajustar la distancia desde abajo */
+            left: 10px; /* Ajustar la distancia desde la izquierda */
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+            padding: 10px; /* Añadir relleno */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            font-family: Arial, sans-serif; /* Estilo de la fuente */
+        }
+    </style>
 </head>
 <body>
-    <div id="nota">
-        <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
-            AQUI UNAS FOTICOS PARA RECORDAR LO QUE HEMOS PASADO TE AMO MUCHO COSITA PECHOCHA</h1>
-    </div>
     <div id="album">
         <img id="imagen" src="foticos/bebe1.jpeg" alt="Imagen 1">
+        <div id="nota">
+            <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
+                AQUI UNAS FOTICOS PARA RECORDAR LO QUE HEMOS PASADO TE AMO MUCHO COSITA PECHOCHA</h1>
+        </div>
         <div id="botones">
             <button id="btnAnterior">Anterior</button>
             <button id="btnSiguiente">Siguiente</button>
@@ -21,7 +42,7 @@
 
     <script>
         var index = 0;
-        var imagenes = ['foticos/bebe1.jpeg', 'foticos/bebe2.jpeg', 'foticos/bebe3.jpeg', 'foticos/bebe4.jpeg', 'foticos/bebe5.jpeg']; // Rutas de las imágenes
+        var imagenes = ['foticos/bebe1.jpeg', 'foticos/bebe2.jpeg', 'foticos/bebe3.jpeg', 'foticos/bebe4.jpeg', 'foticos/bebe5.jpeg', 'foticos/bebe6.jpeg', 'foticos/bebe7.jpeg', 'foticos/bebe8.jpeg', 'foticos/bebe9.jpeg', 'foticos/bebe10.jpeg', 'foticos/bebe11.jpeg', 'foticos/bebe12.jpeg', 'foticos/bebe13.jpeg', 'foticos/bebe14.jpeg', 'foticos/bebe15.jpeg', 'foticos/bebe16.jpeg']; // Rutas de las imágenes
 
         var imagenElemento = document.getElementById('imagen');
 
@@ -46,4 +67,3 @@
     </script>
 </body>
 </html>
-
