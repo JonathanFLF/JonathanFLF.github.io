@@ -7,11 +7,12 @@
     <title>Mini Álbum</title>
 </head>
 <body>
+    <div id="nota">
+        <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
+            AQUI UNAS FOTICOS PARA RECORDAR LO QUE HEMOS PASADO TE AMO MUCHO COSITA PECHOCHA</h1>
+    </div>
     <div id="album">
-        
-<h1 className='font-sans font-bold text-gray-400 text-2xl'> 
-    AQUI UNAS FOTICOS PARA RECORDAR LO QUE HEMOS PASADO TE AMO MUCHO COSITA PECHOCHA</h1>
-        <img id="imagen" src="imagen1.jpg" alt="Imagen 1">
+        <img id="imagen" src="foticos/imagen1.jpg" alt="Imagen 1">
         <div id="botones">
             <button id="btnAnterior">Anterior</button>
             <button id="btnSiguiente">Siguiente</button>
@@ -20,7 +21,7 @@
 
     <script>
         var index = 0;
-        var imagenes = ['imagen1.jpg', 'imagen2.jpg', 'imagen3.jpg', 'imagen4.jpg', 'imagen5.jpg']; // Añade tus imágenes aquí
+        var imagenes = ['foticos/bebe1.jpeg', 'foticos/bebe2.jpeg', 'foticos/bebe3.jpeg', 'foticos/bebe4.jpeg', 'foticos/bebe5.jpeg']; // Rutas de las imágenes
 
         var imagenElemento = document.getElementById('imagen');
 
