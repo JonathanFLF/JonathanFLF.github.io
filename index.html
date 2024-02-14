@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto React Simplificado</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Para mi Toxica</title>
+    <style>
+        #btnOtraPagina {
+            display: none; /* Ocultar el botón al principio */
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <p id="textP">Vamos, respondeme!</p>
-        <img id="image" src="https://i.pinimg.com/originals/f6/a5/f7/f6a5f7ddff1f05cbcc560256b9f98c2e.gif" alt="GIF">
+        <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
+            Quieres pasar san Valentin Conmigo Cosita Pechocha? </h1>
+        <img id="image" src="https://i.pinimg.com/originals/55/da/72/55da721f5581f754ada9cca87657662f.gif" alt="GIF">
+        <p id="textP">Vamos, respondeme cosita Pechocha!</p>
         <button id="btnNo">No</button>
         <button id="btnYes">Sí</button>
-        <button id="btnOtraPagina">Ir a otra página</button> <!-- Nuevo botón -->
+        <button id="btnOtraPagina" onclick="window.location.href = 'otra_pagina.html'">Ir a otra página</button>
     </div>
 
     <script>
-        var textElement = document.getElementById('textP');
-        var imageElement = document.getElementById('image');
-        var btnNo = document.getElementById('btnNo');
-        var btnYes = document.getElementById('btnYes');
-        
-
+        // Lógica de la aplicación
         var index = 0;
         var textP = 'Vamos, respondeme!';
         var image = 'https://i.pinimg.com/originals/f6/a5/f7/f6a5f7ddff1f05cbcc560256b9f98c2e.gif';
-        var options = ['Segura?', 'Segurisima?', 'Estas completamente segura?', 'No te arrepentiras?', 'Pero si estas segura?', 'No hay vuelta atras', 'No hay devoluciones', 'No hay garantias', 'No hay reembolsos', 'No hay cambios', 'No hay nada', 'No hay', 'Que no hay'];
+
+        var options = ['Segura?', 'Segurisima?', 'Estas completamente segura?', 'Tienes a otro muchacho?', 'Ya no me quieres?', 'No hay vuelta atras', 'No hay devoluciones', 'No hay garantias', 'No hay reembolsos', 'No hay cambios', 'Se va a morir el marranito'];
 
         function handleButtonNo() {
             index = (index + 1) % options.length;
@@ -35,27 +38,21 @@
         }
 
         function handleButtonYes() {
-            image = 'https://i.pinimg.com/originals/e4/9d/7b/e49d7b7e965f09e31b498314b02e3662.gif';
+            image = 'https://i.pinimg.com/originals/77/81/79/778179a6a9ebc7a191cd9d84489b48a6.gif';
             textP = 'Gracias por aceptar, te amo mucho <3';
-            // Aquí iría la lógica para activar la animación de confeti, pero como este código está simplificado, no se incluye.
             updateUI();
-            var btnOtraPagina = document.getElementById('btnOtraPagina'); // Nuevo botón
+            // Mostrar el botón después de hacer clic en "Sí"
+            document.getElementById('btnOtraPagina').style.display = 'inline-block';
         }
 
         function updateUI() {
-            textElement.textContent = textP;
-            imageElement.src = image;
+            document.getElementById('textP').textContent = textP;
+            document.getElementById('image').src = image;
         }
 
         // Asignar los manejadores de eventos a los botones
-        btnNo.addEventListener('click', handleButtonNo);
-        btnYes.addEventListener('click', handleButtonYes);
-
-        // Manejador de eventos para el nuevo botón
-        btnOtraPagina.addEventListener('click', function() {
-            // Cambiar la ubicación de la página al hacer clic en el botón
-            window.location.href = 'foticos.html';
-        });
+        document.getElementById('btnNo').addEventListener('click', handleButtonNo);
+        document.getElementById('btnYes').addEventListener('click', handleButtonYes);
     </script>
 </body>
 </html>
