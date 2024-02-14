@@ -4,55 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Para mi Toxica</title>
+    <title>Mini Álbum</title>
     <style>
-        #btnOtraPagina {
-            display: none; /* Ocultar el botón al principio */
+        #album {
+            position: relative;
+            display: inline-block;
+        }
+
+        #imagen {
+            max-width: 400px; /* Definir el ancho máximo de las imágenes */
+            display: block;
+        }
+
+        #nota {
+            position: absolute;
+            top: 10px; /* Ajustar la distancia desde arriba */
+            left: 10px; /* Ajustar la distancia desde la izquierda */
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+            padding: 10px; /* Añadir relleno */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            font-family: Arial, sans-serif; /* Estilo de la fuente */
         }
     </style>
 </head>
 <body>
-    <div id="app">
-        <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
-            Quieres pasar san Valentin Conmigo Cosita Pechocha? </h1>
-        <img id="image" src="https://i.pinimg.com/originals/55/da/72/55da721f5581f754ada9cca87657662f.gif" alt="GIF">
-        <p id="textP">Vamos, respondeme cosita Pechocha!</p>
-        <button id="btnNo">No</button>
-        <button id="btnYes">Sí</button>
-        <button id="btnOtraPagina" onclick="window.location.href = 'foticos.html'">Ir a otra página</button>
+    <div id="album">
+        <div id="nota">
+            <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
+                AQUI UNAS FOTICOS PARA RECORDAR LO QUE HEMOS PASADO TE AMO MUCHO COSITA PECHOCHA</h1>
+        </div>
+        <img id="imagen" src="foticos/bebe1.jpeg" alt="Imagen 1">
+        <div id="botones">
+            <button id="btnAnterior">Anterior</button>
+            <button id="btnSiguiente">Siguiente</button>
+        </div>
     </div>
 
     <script>
-        // Lógica de la aplicación
         var index = 0;
-        var textP = 'Vamos, respondeme!';
-        var image = 'https://i.pinimg.com/originals/f6/a5/f7/f6a5f7ddff1f05cbcc560256b9f98c2e.gif';
+        var imagenes = ['foticos/bebe1.jpeg', 'foticos/bebe2.jpeg', 'foticos/bebe3.jpeg', 'foticos/bebe4.jpeg', 'foticos/bebe5.jpeg', 'foticos/bebe6.jpeg', 'foticos/bebe7.jpeg', 'foticos/bebe8.jpeg', 'foticos/bebe9.jpeg', 'foticos/bebe10.jpeg', 'foticos/bebe11.jpeg', 'foticos/bebe12.jpeg', 'foticos/bebe13.jpeg', 'foticos/bebe14.jpeg', 'foticos/bebe15.jpeg', 'foticos/bebe16.jpeg']; // Rutas de las imágenes
 
-        var options = ['Segura?', 'Segurisima?', 'Estas completamente segura?', 'Tienes a otro muchacho?', 'Ya no me quieres?', 'No hay vuelta atras', 'No hay devoluciones', 'No hay garantias', 'No hay reembolsos', 'No hay cambios', 'Se va a morir el marranito'];
+        var imagenElemento = document.getElementById('imagen');
 
-        function handleButtonNo() {
-            index = (index + 1) % options.length;
-            image = 'https://i.pinimg.com/originals/99/cf/86/99cf860a99daff075a50f195dbfa5d3f.gif';
-            textP = options[index];
-            updateUI();
+        function mostrarImagen() {
+            imagenElemento.src = imagenes[index];
         }
 
-        function handleButtonYes() {
-            image = 'https://i.pinimg.com/originals/77/81/79/778179a6a9ebc7a191cd9d84489b48a6.gif';
-            textP = 'Gracias por aceptar, te amo mucho <3';
-            updateUI();
-            // Mostrar el botón después de hacer clic en "Sí"
-            document.getElementById('btnOtraPagina').style.display = 'inline-block';
+        function mostrarSiguienteImagen() {
+            index = (index + 1) % imagenes.length;
+            mostrarImagen();
         }
 
-        function updateUI() {
-            document.getElementById('textP').textContent = textP;
-            document.getElementById('image').src = image;
+        function mostrarImagenAnterior() {
+            index = (index - 1 + imagenes.length) % imagenes.length;
+            mostrarImagen();
         }
 
-        // Asignar los manejadores de eventos a los botones
-        document.getElementById('btnNo').addEventListener('click', handleButtonNo);
-        document.getElementById('btnYes').addEventListener('click', handleButtonYes);
+        document.getElementById('btnAnterior').addEventListener('click', mostrarImagenAnterior);
+        document.getElementById('btnSiguiente').addEventListener('click', mostrarSiguienteImagen);
+
+        mostrarImagen(); // Mostrar la primera imagen al cargar la página
     </script>
 </body>
 </html>
