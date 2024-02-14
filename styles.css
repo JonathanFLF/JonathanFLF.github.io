@@ -5,8 +5,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: pink; /* Fondo rosa */
+    background-color: rgb(255, 192, 203); /* Fondo rosa */
 }
+
 
 
 #app {
