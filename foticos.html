@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Para mi Toxica</title>
-
-
+    <title>Mini Álbum</title>
 </head>
 <body>
-    <div id="app">
-        <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
-            AQUI UNAS FOTICOS PARA RECORDAR LO QUE HEMOS PASADO TE AMO MUCHO COSITA PECHOCHA</h1>
-        <img id="image" src="https://i.pinimg.com/originals/55/da/72/55da721f5581f754ada9cca87657662f.gif" alt="GIF">
-        <p id="textP">Vamos, respondeme cosita Pechocha!</p>
-    
+    <div id="album">
+        
+<h1 className='font-sans font-bold text-gray-400 text-2xl'> 
+    AQUI UNAS FOTICOS PARA RECORDAR LO QUE HEMOS PASADO TE AMO MUCHO COSITA PECHOCHA</h1>
+        <img id="imagen" src="imagen1.jpg" alt="Imagen 1">
+        <div id="botones">
+            <button id="btnAnterior">Anterior</button>
+            <button id="btnSiguiente">Siguiente</button>
+        </div>
     </div>
 
-</body>
+    <script>
+        var index = 0;
+        var imagenes = ['imagen1.jpg', 'imagen2.jpg', 'imagen3.jpg', 'imagen4.jpg', 'imagen5.jpg']; // Añade tus imágenes aquí
 
+        var imagenElemento = document.getElementById('imagen');
+
+        function mostrarImagen() {
+            imagenElemento.src = imagenes[index];
+        }
+
+        function mostrarSiguienteImagen() {
+            index = (index + 1) % imagenes.length;
+            mostrarImagen();
+        }
+
+        function mostrarImagenAnterior() {
+            index = (index - 1 + imagenes.length) % imagenes.length;
+            mostrarImagen();
+        }
+
+        document.getElementById('btnAnterior').addEventListener('click', mostrarImagenAnterior);
+        document.getElementById('btnSiguiente').addEventListener('click', mostrarSiguienteImagen);
+
+        mostrarImagen(); // Mostrar la primera imagen al cargar la página
+    </script>
+</body>
 </html>
+
