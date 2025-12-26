@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Para mi Toxica</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/011/026/769/non_2x/watercolor-balloon-heart-happy-valentine-s-day-clipart-free-png.png" />
+    <title>Mi terremoto🐧</title>
     <style>
         #btnOtraPagina {
             display: none; /* Ocultar el botón al principio */
@@ -14,45 +15,28 @@
 <body>
     <div id="app">
         <h1 className='font-sans font-bold text-gray-400 text-2xl'> 
-            Quieres pasar san Valentin Conmigo Cosita Pechocha? </h1>
+             Tu presencia hace mis días mejores, y eso para mí lo dice todo </h1>
         <img id="image" src="https://i.pinimg.com/originals/55/da/72/55da721f5581f754ada9cca87657662f.gif" alt="GIF">
-        <p id="textP">Vamos, respondeme cosita Pechocha!</p>
-        <button id="btnNo">No</button>
-        <button id="btnYes">Sí</button>
-        <button id="btnOtraPagina" onclick="window.location.href = 'foticos.html'">Pulsa para ver algo lindo</button>
+        <p id="textP">! Te quiero ¡</p>
+        
     </div>
 
     <script>
         // Lógica de la aplicación
         var index = 0;
-        var textP = 'Vamos, respondeme!';
+        var textP = 'Me gustas, y me gusta aún más saber que formas parte de mi vida.';
         var image = 'https://i.pinimg.com/originals/f6/a5/f7/f6a5f7ddff1f05cbcc560256b9f98c2e.gif';
 
         var options = ['Segura?', 'Segurisima?', 'Estas completamente segura?', 'Tienes a otro muchacho?', 'Ya no me quieres?', 'No hay vuelta atras', 'No hay devoluciones', 'No hay garantias', 'No hay reembolsos', 'No hay cambios', 'Se va a morir el marranito'];
 
         function handleButtonNo() {
             index = (index + 1) % options.length;
-            image = 'https://i.pinimg.com/originals/99/cf/86/99cf860a99daff075a50f195dbfa5d3f.gif';
+            image = 'https://i.pinimg.com/originals/b3/66/20/b366201407b7d06f4622d1f5d30beec4.gif';
             textP = options[index];
             updateUI();
         }
 
-        function handleButtonYes() {
-            image = 'https://i.pinimg.com/originals/77/81/79/778179a6a9ebc7a191cd9d84489b48a6.gif';
-            textP = 'Gracias por aceptar, te amo mucho mi BEBE <3';
-            updateUI();
-            // Mostrar el botón después de hacer clic en "Sí"
-            document.getElementById('btnOtraPagina').style.display = 'inline-block';
-        }
-
-        function updateUI() {
-            document.getElementById('textP').textContent = textP;
-            document.getElementById('image').src = image;
-        }
-
-        // Asignar los manejadores de eventos a los botones
-        document.getElementById('btnNo').addEventListener('click', handleButtonNo);
-        document.getElementById('btnYes').addEventListener('click', handleButtonYes);
+        
     </script>
 </body>
 </html>
